@@ -27,6 +27,10 @@
     {
       "source": "/security-notice",
       "destination": "/security-notice.html"
+    },
+    {
+      "source": "/radar",
+      "destination": "/radar.html"
     }
   ],
   "redirects": [

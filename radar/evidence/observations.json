@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "mode": "owned-domain-proof",
+  "generated_at": "2026-11-15T10:10:05.966264+00:00",
+  "targets": [
+    "cyberdefender.services",
+    "www.cyberdefender.services"
+  ],
+  "collector_version": "0.1",
+  "limitations": [
+    "Point-in-time research only; no exploitability tests, mail delivery tests, recursive SPF evaluation, inherited DMARC discovery, security score or customer monitoring.",
+    "Environment and resolver caching can affect results. Raw DNS evidence retained for review."
+  ],
+  "results": [
+    {
+      "check": "spf",
+      "status": "observed",
+      "evidence": [],
+      "interpretation": "No matching record returned for this exact queried name at this time. Review intended mail use; this does not establish compromise or effective inherited policy.",
+      "classification": "configuration_review",
+      "severity": "unrated",
+      "confidence": "observed",
+      "evidence_index": 0
+    },
+    {
+      "check": "dmarc",
+      "status": "observed",
+      "evidence": [
+        "v=DMARC1; p=quarantine; adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;"
+      ],
+      "interpretation": "Published record observed. This is not proof of effective authentication, message alignment, exploitability or account security. Full syntax and dependency evaluation not performed.",
+      "classification": "informational",
+      "severity": "unrated",
+      "confidence": "observed",
+      "evidence_index": 1
+    },
+    {
+      "check": "strict-transport-security",
+      "status": "observed",
+      "evidence": "max-age=63072000",
+      "interpretation": "Header present; policy correctness and effectiveness not evaluated.",
+      "classification": "informational",
+      "severity": "unrated",
+      "confidence": "observed",
+      "evidence_index": 2
+    },
+    {
+      "check": "content-security-policy",
+      "status": "observed",
+      "evidence": null,
+      "interpretation": "Not returned on this response. Contextual review only, not a confirmed vulnerability; equivalent controls may exist.",
+      "classification": "configuration_review",
+      "severity": "unrated",
+      "confidence": "observed",
+      "evidence_index": 2
+    },
+    {
+      "check": "x-content-type-options",
+      "status": "observed",
+      "evidence": "nosniff",
+      "interpretation": "Header present; policy correctness and effectiveness not evaluated.",
+      "classification": "informational",
+      "severity": "unrated",
+      "confidence": "observed",
+      "evidence_index": 2
+    },
+    {
+      "check": "referrer-policy",
+      "status": "observed",
+      "evidence": "strict-origin-when-cross-origin",
+      "interpretation": "Header present; policy correctness and effectiveness not evaluated.",
+      "classification": "informational",
+      "severity": "unrated",
+      "confidence": "observed",
+      "evidence_index": 2
+    },
+    {
+      "check": "permissions-policy",
+      "status": "observed",
+      "evidence": null,
+      "interpretation": "Not returned on this response. Contextual review only, not a confirmed vulnerability; equivalent controls may exist.",
+      "classification": "configuration_review",
+      "severity": "unrated",
+      "confidence": "observed",
+      "evidence_index": 2
+    },
+    {
+      "check": "x-frame-options",
+      "status": "observed",
+      "evidence": null,
+      "interpretation": "Not returned on this response. Contextual review only, not a confirmed vulnerability; equivalent controls may exist.",
+      "classification": "configuration_review",
+      "severity": "unrated",
+      "confidence": "observed",
+      "evidence_index": 2
+    },
+    {
+      "check": "tls_handshake",
+      "status": "unable_to_assess",
+      "evidence": null,
+      "interpretation": "Handshake did not complete. A client/environment error is not proof of server insecurity.",
+      "classification": "informational",
+      "severity": "unrated",
+      "confidence": "unknown",
+      "evidence_index": 3
+    },
+    {
+      "check": "dkim",
+      "status": "not_assessed",
+      "evidence": null,
+      "interpretation": "No verified selector supplied; no guessing performed.",
+      "classification": "informational",
+      "severity": "unrated",
+      "confidence": "unknown"
+    },
+    {
+      "check": "certificate_transparency",
+      "status": "not_assessed",
+      "evidence": null,
+      "interpretation": "No approved data provider integrated.",
+      "classification": "informational",
+      "severity": "unrated",
+      "confidence": "unknown"
+    },
+    {
+      "check": "software_advisories",
+      "status": "not_assessed",
+      "evidence": null,
+      "interpretation": "No verified software version evidence supplied.",
+      "classification": "informational",
+      "severity": "unrated",
+      "confidence": "unknown"
+    },
+    {
+      "check": "breach_exposure",
+      "status": "not_assessed",
+      "evidence": null,
+      "interpretation": "No verified provider access or customer authorisation configured.",
+      "classification": "informational",
+      "severity": "unrated",
+      "confidence": "unknown"
+    }
+  ],
+  "evidence": [
+    {
+      "check": "spf",
+      "source": "https://dns.google/resolve?name=cyberdefender.services&type=TXT",
+      "target": "cyberdefender.services",
+      "observed_at": "2026-11-15T10:09:48.029966+00:00",
+      "http_status": 200,
+      "sha256": "afde3e9c7d69b2f69d565a7d4334172d8473a114403b377b9fab84507bf2043a",
+      "response": {
+        "Status": 0,
+        "TC": false,
+        "RD": true,
+        "RA": true,
+        "AD": false,
+        "CD": false,
+        "Question": [
+          {
+            "name": "cyberdefender.services.",
+            "type": 16
+          }
+        ],
+        "Authority": [
+          {
+            "name": "cyberdefender.services.",
+            "type": 6,
+            "TTL": 600,
+            "data": "ns49.domaincontrol.com. dns.jomax.net. 2026111403 28800 7200 604800 600"
+          }
+        ],
+        "Comment": "Response from 173.201.72.25."
+      }
+    },
+    {
+      "check": "dmarc",
+      "source": "https://dns.google/resolve?name=_dmarc.cyberdefender.services&type=TXT",
+      "target": "_dmarc.cyberdefender.services",
+      "observed_at": "2026-11-15T10:09:54.573216+00:00",
+      "http_status": 200,
+      "sha256": "8b05b7ea5c09868264c467c8acefebb99875c2ec58a6a0b5d81c2c6c13f60d5c",
+      "response": {
+        "Status": 0,
+        "TC": false,
+        "RD": true,
+        "RA": true,
+        "AD": false,
+        "CD": false,
+        "Question": [
+          {
+            "name": "_dmarc.cyberdefender.services.",
+            "type": 16
+          }
+        ],
+        "Answer": [
+          {
+            "name": "_dmarc.cyberdefender.services.",
+            "type": 16,
+            "TTL": 3600,
+            "data": "v=DMARC1; p=quarantine; adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;"
+          }
+        ],
+        "Comment": "Response from 173.201.72.25."
+      }
+    },
+    {
+      "check": "https_headers",
+      "source": "https://www.cyberdefender.services/",
+      "target": "www.cyberdefender.services",
+      "observed_at": "2026-11-15T10:10:00.821875+00:00",
+      "http_status": 200,
+      "headers": {
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "strict-transport-security": "max-age=63072000",
+        "x-content-type-options": "nosniff"
+      },
+      "response_sha256": "9909d5e8ba7e566d41a1a954215cdea24827e33e6f32dafcb4fa329f5d6069db"
+    },
+    {
+      "check": "tls_handshake",
+      "source": "TLS connection to www.cyberdefender.services:443",
+      "target": "www.cyberdefender.services",
+      "observed_at": "2026-11-15T10:10:05.961344+00:00",
+      "error_type": "gaierror",
+      "error": "[Errno 8] nodename nor servname provided, or not known"
+    }
+  ],
+  "collection_complete": false
+}
