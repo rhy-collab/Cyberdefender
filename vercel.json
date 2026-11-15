@@ -1,1 +1,39 @@
-{"outputDirectory":"dist","headers":[{"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"},{"key":"X-Robots-Tag","value":"noindex, nofollow"}]}]}
+{
+  "outputDirectory": "dist",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/industries/therapists",
+      "destination": "/industries/therapists.html"
+    },
+    {
+      "source": "/security-notice",
+      "destination": "/security-notice.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/therapists.html",
+      "destination": "/industries/therapists",
+      "permanent": true
+    }
+  ]
+}
